@@ -19,26 +19,43 @@
 	<script src="https://js.arcgis.com/4.15/"></script>
 
 	<script>
-		var point_template_tree = {
+		// var point_template_tree = {
+		// 	title: "{Name}",
+		// 	content: "Cây này ở <b>{Location}</b>."
+		// };
+		// var point_template_light = {
+		// 	title: "{Name}",
+		// 	content: "Bóng đèn này ở <b>{Location}</b>."
+		// };
+		// var point_template_chair = {
+		// 	title: "{Name}",
+		// 	content: "Cái ghế này ở <b>{Location}</b>."
+		// };
+		// var point_template_area = {
+		// 	title: "{Name}",
+		// 	content: "Khu vực này ở <b>{Location}</b>."
+		// };
+		// var point_template_university = {
+		// 	title: "{Name}",
+		// 	content: "Trường ở <b>{Location}</b>."
+		// };
+
+		///Phường 4
+		var point_template_P4_hospital = {
+					title: "{Name}",
+					content: "<b>{Location}</b>"
+				};
+		var point_template_P4= {
 			title: "{Name}",
-			content: "Cây này ở <b>{Location}</b>."
+			content: "<b>{Location}</b>."
 		};
-		var point_template_light = {
-			title: "{Name}",
-			content: "Bóng đèn này ở <b>{Location}</b>."
-		};
-		var point_template_chair = {
-			title: "{Name}",
-			content: "Cái ghế này ở <b>{Location}</b>."
-		};
+
+		////////////////
 		var point_template_area = {
-			title: "{Name}",
-			content: "Khu vực này ở <b>{Location}</b>."
-		};
-		var point_template_university = {
-			title: "{Name}",
-			content: "Trường ở <b>{Location}</b>."
-		};
+						title: "{Name}",
+						content: "<b>{Location}</b>."
+					};
+
 		var jsondata = {
 			"points": [
 				//Phường 9
@@ -61,22 +78,22 @@
 				// },
 				//Phường 4
 				//Example
-				// {
-				// 	type: "point",
-				// 	longitude: 106.80378931111271, 
-				// 	latitude: 10.870369163501929,
-				// 	Name: "Ghế ngồi",
-				// 	Location: "trong khuông viên trường ĐH CNTT",
-				// 	symbol: {
-				// 		type: "simple-marker",
-				// 		color: [153, 51, 51],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_chair
-				// },
+				{
+					type: "point",
+					longitude: 106.68127715688188, 
+					latitude: 10.774075083216818,
+					Name: "Bệnh viện Bình Dân",
+					Location: "Địa chỉ: 371 Điện Biên Phủ, Phường 4, Quận 3, Hồ Chí Minh 700000, Việt Nam",
+					symbol: {
+						type: "simple-marker",
+						color: [255, 204, 0],
+						outline: {
+							color: [255, 255, 255],
+							width: 1
+						}
+					},
+					popupTemplate: point_template_P4_hospital
+				},
 				//Phường 6
 				//Example
 				// {
@@ -153,31 +170,33 @@
 			"lines": [
 				// Quận 3
 				//Example
-				// {
-				// 	type: "polyline",
-				// 	paths: [
-				// 		[106.79134386128325, 10.866997521468168],
-				// 		[106.79413335865881, 10.865395978158253],
-				// 		[106.79833906239429, 10.864637349380688],
-				// 		[106.80366056507997, 10.867882581189418],
-				// 		[106.8083812529463, 10.873403608756607],
-				// 		[106.80511968678411, 10.875552988801912],
-				// 		[106.80318849629333, 10.876522311989321],
-				// 		[106.80074232167169, 10.876522311989321],
-				// 		[106.79949777668874, 10.878798101871515],
-				// 		[106.79675119465743, 10.878882390052073],
-				// 		[106.78988473957912, 10.875637277899806],
-				// 		[106.79134386128325, 10.866997521468168]
-				// 	],
-				// 	symbol: {
-				// 		type: "simple-line",
-				// 		color: [226, 119, 40], // orange
-				// 		width: 2
-				// 	},
-				// 	Name: "Làng đại học",
-				// 	Location: "Quận Thủ Đức",
-				// 	popupTemplate: point_template_area
-				// }
+				{
+					type: "polyline",
+					paths: [
+
+						//Phường 4
+						[106.68209335660033, 10.770074710273892],
+						[106.67904430070908, 10.772709893579371], 
+						[106.68282879153882, 10.775936355835066], 
+						[106.68271611794627, 10.775984486566879], 
+						[106.68265659836406, 10.776052516972653], 
+						[106.68175874717366, 10.777547601177377], 
+						[106.68184727867835, 10.777598757636863], 
+						[106.68192087832313, 10.777675073803865], 
+						[106.68638256253398, 10.775275491824537], 
+						[106.68682577057525, 10.775030447952853], 
+						[106.68481506507447, 10.772919119592833], 
+						[106.68209335660033, 10.770074710273892]
+					],
+					symbol: {
+						type: "simple-line",
+						color: [226, 119, 40], // orange
+						width: 2
+					},
+					Name: "Quận 3",
+					Location: "Quận Thủ Đức",
+					popupTemplate: point_template_area
+				}
 			],
 			"polygons": [
 				//Phường 9
@@ -206,28 +225,34 @@
 				// },
 				//Phường 4
 				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
+				{
+					type: "polygon",
+					rings: [
+						[106.68209335660033, 10.770074710273892],
+						[106.67904430070908, 10.772709893579371], 
+						[106.68282879153882, 10.775936355835066], 
+						[106.68271611794627, 10.775984486566879], 
+						[106.68265659836406, 10.776052516972653], 
+						[106.68175874717366, 10.777547601177377], 
+						[106.68184727867835, 10.777598757636863], 
+						[106.68192087832313, 10.777675073803865], 
+						[106.68638256253398, 10.775275491824537], 
+						[106.68682577057525, 10.775030447952853], 
+						[106.68481506507447, 10.772919119592833], 
+						[106.68209335660033, 10.770074710273892]
+					],
+					Name: "Khu vực Phường 4",
+					Location: "Quận 3",
+					symbol: {
+						type: "simple-fill",
+						color: [227, 139, 79, 0.4],
+						outline: {
+							color: [255, 255, 255],
+							width: 1
+						}
+					},
+					popupTemplate: point_template_P4
+				},
 				//Phường 6
 				//Example
 				// {
@@ -326,6 +351,7 @@
 				// },
 			]
 		};
+
 		require([
 			"esri/Map",
 			"esri/views/MapView",
@@ -343,7 +369,7 @@
 			var view = new MapView({
 				container: "viewDiv",
 				map: map,
-				center: [106.8033387, 10.8739831],
+				center: [106.68216950311093,10.772966281258045],
 				zoom: 15,
 				highlightOptions: {
 					color: "blue"
