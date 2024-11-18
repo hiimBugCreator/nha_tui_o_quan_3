@@ -15,10 +15,15 @@
 		}
 	</style>
 
-	<link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
-	<script src="https://js.arcgis.com/4.15/"></script>
+	<link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
+
+	<script src="./data_script/quan3.js"></script>
+	<script src="./data_script//basemap_enum.js"></script>
+	<script src="https://js.arcgis.com/4.27/"></script>
 
 	<script>
+		var linePolygonColor = [87, 14, 196];
+
 		var point_template_tree = {
 			title: "{Name}",
 			content: "Cây này ở <b>{Location}</b>."
@@ -30,10 +35,6 @@
 		var point_template_chair = {
 			title: "{Name}",
 			content: "Cái ghế này ở <b>{Location}</b>."
-		};
-		var point_template_area = {
-			title: "{Name}",
-			content: "Khu vực này ở <b>{Location}</b>."
 		};
 		var point_template_university = {
 			title: "{Name}",
@@ -151,33 +152,22 @@
 				// }
 			],
 			"lines": [
-				// Quận 3
-				//Example
-				// {
-				// 	type: "polyline",
-				// 	paths: [
-				// 		[106.79134386128325, 10.866997521468168],
-				// 		[106.79413335865881, 10.865395978158253],
-				// 		[106.79833906239429, 10.864637349380688],
-				// 		[106.80366056507997, 10.867882581189418],
-				// 		[106.8083812529463, 10.873403608756607],
-				// 		[106.80511968678411, 10.875552988801912],
-				// 		[106.80318849629333, 10.876522311989321],
-				// 		[106.80074232167169, 10.876522311989321],
-				// 		[106.79949777668874, 10.878798101871515],
-				// 		[106.79675119465743, 10.878882390052073],
-				// 		[106.78988473957912, 10.875637277899806],
-				// 		[106.79134386128325, 10.866997521468168]
-				// 	],
-				// 	symbol: {
-				// 		type: "simple-line",
-				// 		color: [226, 119, 40], // orange
-				// 		width: 2
-				// 	},
-				// 	Name: "Làng đại học",
-				// 	Location: "Quận Thủ Đức",
-				// 	popupTemplate: point_template_area
-				// }
+				{
+					type: "polyline",
+					paths: district3Location,
+					symbol: {
+						type: "simple-line",
+						color: linePolygonColor,
+						style: "solid",
+						width: 3
+					},
+					Name: quan3["name"],
+					Location: quan3["location"],
+					Area: quan3["area"],
+					Population: quan3["population"],
+					Info: quan3["info"],
+					popupTemplate: point_template_area,
+				}
 			],
 			"polygons": [
 				//Phường 9
@@ -334,7 +324,7 @@
 		], function (Map, MapView, Graphic, GraphicsLayer) {
 
 			var map = new Map({
-				basemap: "topo-vector"
+				basemap: BasemapEnum.TOPO.key
 			});
 			map.on("load", function () {
 				map.graphics.enableMouseEvents();
@@ -343,10 +333,10 @@
 			var view = new MapView({
 				container: "viewDiv",
 				map: map,
-				center: [106.8033387, 10.8739831],
+				center: [106.68378033214488, 10.782932235558643],
 				zoom: 15,
 				highlightOptions: {
-					color: "blue"
+					color: "green"
 				}
 			});
 			var createGraphic = function (data) {
@@ -368,8 +358,6 @@
 				graphicsLayer.add(createGraphic(data));
 			});
 			map.add(graphicsLayer);
-
-
 		});
 	</script>
 </head>
