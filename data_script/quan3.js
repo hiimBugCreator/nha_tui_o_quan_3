@@ -69,7 +69,7 @@ const BasemapEnum = {
 	},
 };
 
-var point_template_area = {
+const point_template_area = {
     title: "{Name}",
     content: `
                 <div style="font-family: 'Arial', sans-serif; 
@@ -95,7 +95,7 @@ var point_template_area = {
             `
 };
 
-var district3Location = [
+const district3Location = [
     [
         106.66462313459891,
         10.786926276778152
@@ -1350,7 +1350,7 @@ var district3Location = [
     ]
 ];
 
-var quan3 = {
+const quan3 = {
     "name": "Quận 3",
     "location": "Quận 3 \nHồ Chí Minh \nViệt Nam",
     "area": "4.92 km²",
