@@ -15,11 +15,32 @@
 		}
 	</style>
 
-	<link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
-	<script src="https://js.arcgis.com/4.15/"></script>
+	<link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
+
+	<script src="./data_script/quan3.js"></script>
+	<script src="./data_script//basemap_enum.js"></script>
+	<script src="https://js.arcgis.com/4.27/"></script>
 
 	<script>
-		
+		var linePolygonColor = [87, 14, 196];
+
+		var point_template_tree = {
+			title: "{Name}",
+			content: "Cây này ở <b>{Location}</b>."
+		};
+		var point_template_light = {
+			title: "{Name}",
+			content: "Bóng đèn này ở <b>{Location}</b>."
+		};
+		var point_template_chair = {
+			title: "{Name}",
+			content: "Cái ghế này ở <b>{Location}</b>."
+		};
+		var point_template_university = {
+			title: "{Name}",
+			content: "Trường ở <b>{Location}</b>."
+		};
+
 		let point_template_ward_4_poppup = {
 					title: "{Name}",
 					content: "<b>{Location}</b>"
@@ -29,12 +50,7 @@
 			content: "<b>{Location}</b>."
 		};
 
-		let point_template_area = {
-					title: "{Name}",
-					content: "Khu vực này ở <b>{Location}</b>."
-				};
-
-		let jsondata = {
+		var jsondata = {
 			"points": [
 				//Phường 9
 				//Example
@@ -146,34 +162,21 @@
 				// }
 			],
 			"lines": [
-				// Quận 3
-				//Example
 				{
 					type: "polyline",
-					paths: [
-						[106.68212377580555, 10.770051051963218],
-						[106.67904817502837, 10.772712046434663], 
-						[106.68285746391444, 10.775941374897512], 
-						[106.68271798905015, 10.775976946186873],
-						[106.68265562768657, 10.776051382392529],
-						[106.68184686426389, 10.777592597392072], 
-						[106.68188878325856, 10.777632448579737], 
-						[106.68191717999689, 10.77766765045776], 
-						[106.68254393660135, 10.777336885475371],
-						[106.68340065634048, 10.776876847271579],
-						[106.68390491163235, 10.77660347603061], 
-						[106.68579763268706, 10.775538992106155], 
-						[106.68636760210593, 10.775283405334918],  
-						[106.68212377580555, 10.770051051963218]
-					],
+					paths: district3Location,
 					symbol: {
 						type: "simple-line",
-						color: [226, 119, 40],
-						width: 2
+						color: linePolygonColor,
+						style: "solid",
+						width: 3
 					},
-					Name: "Quận 3",
-					Location: "Quận 3",
-					popupTemplate: point_template_area
+					Name: quan3["name"],
+					Location: quan3["location"],
+					Area: quan3["area"],
+					Population: quan3["population"],
+					Info: quan3["info"],
+					popupTemplate: point_template_area,
 				}
 			],
 			"polygons": [
@@ -331,7 +334,6 @@
 				// },
 			]
 		};
-
 		require([
 			"esri/Map",
 			"esri/views/MapView",
@@ -339,23 +341,23 @@
 			"esri/layers/GraphicsLayer"
 		], function (Map, MapView, Graphic, GraphicsLayer) {
 
-			let map = new Map({
-				basemap: "topo-vector"
+			var map = new Map({
+				basemap: BasemapEnum.TOPO.key
 			});
 			map.on("load", function () {
 				map.graphics.enableMouseEvents();
 			});
 
-			let view = new MapView({
+			var view = new MapView({
 				container: "viewDiv",
 				map: map,
-				center: [106.8033387, 10.8739831],
+				center: [106.68378033214488, 10.782932235558643],
 				zoom: 15,
 				highlightOptions: {
-					color: "blue"
+					color: "green"
 				}
 			});
-			let createGraphic = function (data) {
+			var createGraphic = function (data) {
 				return new Graphic({
 					geometry: data,
 					symbol: data.symbol,
@@ -363,7 +365,7 @@
 					popupTemplate: data.popupTemplate
 				});
 			};
-			let graphicsLayer = new GraphicsLayer();
+			var graphicsLayer = new GraphicsLayer();
 			jsondata.points.forEach(function (data) {
 				graphicsLayer.add(createGraphic(data));
 			});
@@ -374,8 +376,6 @@
 				graphicsLayer.add(createGraphic(data));
 			});
 			map.add(graphicsLayer);
-
-
 		});
 	</script>
 </head>
