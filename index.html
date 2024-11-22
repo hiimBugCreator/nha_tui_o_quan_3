@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
 
 	<script src="./data_script/quan3.js"></script>
+	<script src="./data_script/phuong4.js"></script>
 	<script src="./data_script//basemap_enum.js"></script>
 	<script src="https://js.arcgis.com/4.27/"></script>
 
@@ -40,6 +41,7 @@
 			title: "{Name}",
 			content: "Trường ở <b>{Location}</b>."
 		};
+
 		var jsondata = {
 			"points": [
 				//Phường 9
@@ -61,23 +63,22 @@
 				// 	popupTemplate: point_template_chair
 				// },
 				//Phường 4
-				//Example
-				// {
-				// 	type: "point",
-				// 	longitude: 106.80378931111271, 
-				// 	latitude: 10.870369163501929,
-				// 	Name: "Ghế ngồi",
-				// 	Location: "trong khuông viên trường ĐH CNTT",
-				// 	symbol: {
-				// 		type: "simple-marker",
-				// 		color: [153, 51, 51],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_chair
-				// },
+				{
+					type: "point",
+					longitude: point_BinhDanHospital["long"], 
+					latitude: point_BinhDanHospital["lat"],
+					Name: point_BinhDanHospital["name"],
+					Location: point_BinhDanHospital["location"],
+					symbol: {
+						type: "simple-marker",
+						color: [255, 204, 0],
+						outline: {
+							color: [255, 255, 255],
+							width: 1
+						}
+					},
+					popupTemplate: point_template_ward_4_poppup
+				},
 				//Phường 6
 				//Example
 				// {
@@ -195,29 +196,21 @@
 				// 	popupTemplate: point_template_university
 				// },
 				//Phường 4
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
+				{
+					type: "polygon",
+					rings: ward4Location,
+					Name: ward4Info["name"],
+					Location: ward4Info["location"],
+					symbol: {
+						type: "simple-fill",
+						color: [227, 139, 79, 0.4],
+						outline: {
+							color: [255, 255, 255],
+							width: 1
+						}
+					},
+					popupTemplate: point_template_ward
+				},
 				//Phường 6
 				//Example
 				// {
