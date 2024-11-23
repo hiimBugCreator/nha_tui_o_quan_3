@@ -20,6 +20,10 @@
 	<script src="./data_script/quan3.js"></script>
 	<script src="./data_script//basemap_enum.js"></script>
 	<script src="https://js.arcgis.com/4.27/"></script>
+	<script src="./data_script/wards.js"></script>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<link rel="stylesheet" href="css/custom_map.css">
 
 	<script>
 		var linePolygonColor = [87, 14, 196];
@@ -168,152 +172,6 @@
 					Info: quan3["info"],
 					popupTemplate: point_template_area,
 				}
-			],
-			"polygons": [
-				//Phường 9
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
-				//Phường 4
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
-				//Phường 6
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
-				//Phường 12
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
-				//Phường 11
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
-				//Phường 14
-				//Example
-				// {
-				// 	type: "polygon",
-				// 	rings: [
-				// 		[106.80514114445627, 10.870158436990936],
-				// 		[106.80400388783394, 10.868915147546755],
-				// 		[106.8032099539655, 10.868325110065758],
-				// 		[106.80245893544132, 10.869210165849735],
-				// 		[106.80245893544132, 10.869484111155634],
-				// 		[106.8037463957685, 10.871085632526057]
-				// 	],
-				// 	Name: "Đại học CNTT",
-				// 	Location: "Khu phố 6, P.Linh Trung, Q.Thủ Đức, Tp.Hồ Chí Minh",
-				// 	symbol: {
-				// 		type: "simple-fill",
-				// 		color: [227, 139, 79, 0.4],
-				// 		outline: {
-				// 			color: [255, 255, 255],
-				// 			width: 1
-				// 		}
-				// 	},
-				// 	popupTemplate: point_template_university
-				// },
 			]
 		};
 		require([
@@ -354,10 +212,45 @@
 			jsondata.lines.forEach(function (data) {
 				graphicsLayer.add(createGraphic(data));
 			});
-			jsondata.polygons.forEach(function (data) {
-				graphicsLayer.add(createGraphic(data));
+
+			// polygons are wards - add your data in data_script/wards.js
+			wards.forEach(function (ward) {
+				ward.popupTemplate = point_template_ward
+				graphicsLayer.add(createGraphic(ward));
 			});
 			map.add(graphicsLayer);
+
+			// start: get [lon, lat] when click on map
+			// let arrLocation = [];
+			// function handleMapClick(event) {
+			// 	var lat = event.mapPoint.latitude;
+			// 	var lon = event.mapPoint.longitude;
+
+			// 	var coordinates = {
+			// 		latitude: lat,
+			// 		longitude: lon
+			// 	};
+
+			// 	arrLocation.push([lon, lat]);
+
+			// 	var pointGraphic = new Graphic({
+			// 		geometry: {
+			// 			type: "point",
+			// 			longitude: lon,
+			// 			latitude: lat
+			// 		},
+			// 		symbol: {
+			// 			type: "simple-marker",
+			// 			color: "red",
+			// 			size: "8px"
+			// 		}
+			// 	});
+			// 	graphicsLayer.add(pointGraphic);
+			// 	console.log(arrLocation);
+			// }
+
+			// view.on("click", handleMapClick);
+			// end: get [lon, lat] when click on map
 		});
 	</script>
 </head>
@@ -367,3 +260,28 @@
 </body>
 
 </html>
+
+<!--
+// [106.681972, 10.791612],
+// [106.689037, 10.785035],
+// [106.691945, 10.787874],
+// [106.696873, 10.783844], //
+// [106.698029, 10.782905],
+// [106.689370, 10.773637],
+// [106.685307, 10.776009],
+// [106.685181, 10.775885],
+// [106.681515, 10.777933],
+// [106.681603, 10.778474],
+// [106.684394, 10.784375],
+// [106.681130, 10.785936],
+// [106.681886, 10.786445],
+// [106.683236, 10.786759],
+// [106.683497, 10.787309],
+// [106.683367, 10.788363],
+// [106.682894, 10.788659],
+// [106.681541, 10.788722],
+// [106.681285, 10.789371],
+// [106.681406, 10.791108],
+// [106.681967, 10.791617],
+// [106.681972, 10.791612],
+-->
