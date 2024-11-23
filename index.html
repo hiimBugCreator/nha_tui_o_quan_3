@@ -21,6 +21,7 @@
 	<script src="./data_script//basemap_enum.js"></script>
 	<script src="https://js.arcgis.com/4.27/"></script>
 	<script src="./data_script/wards.js"></script>
+	<script src="./data_script/locations.js"></script>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="stylesheet" href="css/custom_map.css">
@@ -206,9 +207,7 @@
 				});
 			};
 			var graphicsLayer = new GraphicsLayer();
-			jsondata.points.forEach(function (data) {
-				graphicsLayer.add(createGraphic(data));
-			});
+
 			jsondata.lines.forEach(function (data) {
 				graphicsLayer.add(createGraphic(data));
 			});
@@ -218,6 +217,13 @@
 				ward.popupTemplate = point_template_ward
 				graphicsLayer.add(createGraphic(ward));
 			});
+
+			// buildings, homes, etc. - add your data in data_script/locations.js
+			locations.forEach(function (location) {
+				location.popupTemplate = point_template_location
+				graphicsLayer.add(createGraphic(location));
+			});
+
 			map.add(graphicsLayer);
 
 			// start: get [lon, lat] when click on map
