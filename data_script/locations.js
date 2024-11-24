@@ -1,10 +1,10 @@
 const locations = [
 	{
 		type: 'point',
-		longitude: 106.68127715688188,
-		latitude: 10.774075083216818,
-		name: 'Bệnh viện Bình Dân',
-		location: '371 Điện Biên Phủ, Phường 4, Quận 3, Hồ Chí Minh 700000, Việt Nam',
+		longitude: 106.69246839195908,
+		latitude: 10.779496542353344,
+		name: 'Bảo tàng chứng tích chiến tranh',
+		location: '28 đường Võ Văn Tần, Phường Võ Thị Sáu, Quận 3, Hồ Chí Minh 700000, Việt Nam',
 		symbol: {
 			type: 'simple-marker',
 			color: [255, 204, 0],
