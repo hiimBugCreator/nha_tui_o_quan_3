@@ -22,6 +22,7 @@
 	<script src="https://js.arcgis.com/4.27/"></script>
 	<script src="./data_script/wards.js"></script>
 	<script src="./data_script/locations.js"></script>
+	<script src="./data_script/ward9.js"></script>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="stylesheet" href="css/custom_map.css">
@@ -223,6 +224,16 @@
 				location.popupTemplate = point_template_location
 				graphicsLayer.add(createGraphic(location));
 			});
+
+			location_9.forEach(function (location) {
+				location.popupTemplate = point_template_location
+				graphicsLayer.add(createGraphic(location));
+			});
+			// buildings, homes, etc. - add your data in data_script/locations.js
+			// ward9.forEach(function (ward) {
+			// 	ward.popupTemplate = point_template_location
+			// 	graphicsLayer.add(createGraphic(ward));
+			// });
 
 			map.add(graphicsLayer);
 
