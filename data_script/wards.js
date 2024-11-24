@@ -225,9 +225,9 @@ const ward9 = {
 	population_density: '40.381 người/km2',
 	symbol: {
 		type: 'simple-fill',
-		color: [227, 139, 79, 0.4],
+		color: [159, 226, 191, 0.4],
 		outline: {
-			color: [255, 255, 255],
+			color: [159, 226, 191],
 			width: 1,
 		},
 	},
