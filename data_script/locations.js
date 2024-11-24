@@ -5,7 +5,6 @@ const locations = [
 		latitude: 10.779496542353344,
 		name: 'Bảo tàng chứng tích chiến tranh',
 		location: '28 đường Võ Văn Tần, Phường Võ Thị Sáu, Quận 3, Hồ Chí Minh 700000, Việt Nam',
-		ImageURL: " https://data.agatetravel.com/images/photogallery/2020/war-remnants-museum-of-vietnam.jpg",
 		symbol: {
 			type: 'simple-marker',
 			color: [255, 204, 0],
@@ -31,8 +30,5 @@ let customLocationContent = function (feature) {
 };
 let point_template_location = {
 	title: '{name}',
-	content:`
-		<b>{Location}</b>
-		<img src="{ImageURL}" alt="Image" style="width:100%; height:150px;">
-	`
+	content: customLocationContent,
 };
