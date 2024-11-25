@@ -14,6 +14,21 @@ const locations = [
 			},
 		},
 	},
+	{
+		type: 'point',
+		longitude: 106.67698465620641,
+		latitude: 10.78262620351187, 
+		name: 'Ga Sài Gòn',
+		location: 'Số 01 Nguyễn Thông, Phường 9, Quận 3, TP. Hồ Chí Minh.',
+		symbol: {
+			type: 'simple-marker',
+			color: [169, 50, 38],
+			outline: {
+				color: [169, 50, 38],
+				width: 1,
+			},
+		},
+	},
 ];
 
 let customLocationContent = function (feature) {
