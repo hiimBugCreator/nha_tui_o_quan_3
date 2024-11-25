@@ -293,6 +293,37 @@ const ward9 = {
 		[106.67450783009055, 10.78286069269569]
 	],
 };
+const ward6 = {
+	type: 'polygon',
+	name: 'Phường 6',
+	location: 'Là một phường thuộc quận 3, TPHCM',
+	area: '0.62 km2',
+	population: '16.609 người',
+	population_density: '26.787người/km2',
+	symbol: {
+		type: 'simple-fill',
+		color: [227, 139, 79, 0.4],
+		outline: {
+			color: [255, 255, 255],
+			width: 1,
+		},
+	},
+	rings: [
+		//Giap ranh phuong 5
+		[106.68523222384484, 10.77591713739036],
+		//Giap ranh phuong 7
+		[106.69182091013747, 10.782510868722397], 
+		[106.68902748876724, 10.78494081325298],
+		//Giap ranh phuong 8
+		[106.69193912711617, 10.787877353338867],
+		//Giap ranh phuong Da Kao
+		[106.69808945966112, 10.782881484075126],
+		//Giap ranh Q1
+		[106.68940228600741, 10.773628166989997],
+		
+		[106.68523222384484, 10.77591713739036],
+	],
+};
 let customWardContent = function (feature) {
 	const attributes = feature.graphic.attributes;
 
@@ -324,4 +355,4 @@ let point_template_ward = {
 };
 
 //define your ward like ward 14 and add it here
-const wards = [ward14, ward4, ward11, ward9];
+const wards = [ward14, ward4, ward11, ward9, ward6];
