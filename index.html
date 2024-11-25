@@ -13,6 +13,14 @@
 			height: 100%;
 			width: 100%;
 		}
+    #basemapSelector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 8px;
+      font-size: 16px;
+    }
 	</style>
 
 	<link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
@@ -226,6 +234,21 @@
 
 			map.add(graphicsLayer);
 
+      const basemaps = Object.values(BasemapEnum);
+      const basemapSelector = document.getElementById("basemapSelector");
+      basemaps.forEach((basemap) => {
+        const option = document.createElement("option");
+        option.value = basemap.key;
+        option.textContent = basemap.name;
+        basemapSelector.appendChild(option);
+      });
+      basemapSelector.value = BasemapEnum.TOPO.key;
+
+      basemapSelector.addEventListener("change", (event) => {
+        const selectedBasemap = event.target.value;
+        map.basemap = selectedBasemap;
+      });
+
 			// start: get [lon, lat] when click on map
 			// let arrLocation = [];
 			// function handleMapClick(event) {
@@ -262,6 +285,7 @@
 </head>
 
 <body>
+  <select id="basemapSelector"></select>
 	<div id="viewDiv"></div>
 </body>
 
