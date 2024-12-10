@@ -14,8 +14,8 @@ const symbols = [
 	{
 		type: 'picture-marker',
 		url: 'https://cdn-icons-png.flaticon.com/512/6395/6395613.png',
-		width: '24px',
-		height: '24px',
+		width: '32px',
+		height: '32px',
 	}, {
 		type: 'picture-marker',
 		url: 'https://static.thenounproject.com/png/4862877-200.png',
