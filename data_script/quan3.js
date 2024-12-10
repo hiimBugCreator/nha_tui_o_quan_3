@@ -1285,4 +1285,4 @@ const quan3 = {
     "area": "4.92 km²",
     "population": "220.375",
     "info": "Quận 3 ngập tràn không khí náo nhiệt của các không gian ẩm thực sôi động, từ những quán cà phê sành điệu phục vụ đồ uống cà phê sáng tạo, nhà hàng Việt hiện đại thời thượng đến quán mì bình dân. Các quầy thức ăn đường phố nằm rải rác tại các điểm vui chơi của người dân địa phương như Hồ Con Rùa và Công viên Lê Văn Tám cách đó không xa. Bảo tàng Chứng tích Chiến tranh lưu giữ thông tin về các cuộc chiến tranh Việt Nam và Đông Dương thông qua hình ảnh và vũ khí, trong khi Nhà thờ Tân Định có niên đại từ thế kỷ 19 nổi tiếng với mặt tiền màu hồng độc đáo."
-  };
+};
